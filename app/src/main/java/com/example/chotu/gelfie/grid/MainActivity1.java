@@ -141,7 +141,7 @@ public class MainActivity1 extends Activity implements SurfaceHolder.Callback {
 
 
                 }catch (Exception e) {
-                    System.out.println("error message"+e.getMessage());
+                  //  System.out.println("error message"+e.getMessage());
                 }
 
             }
@@ -158,7 +158,7 @@ public class MainActivity1 extends Activity implements SurfaceHolder.Callback {
 
         );
         initialize();
-        System.out.println("printing for debugging"+1);
+       // System.out.println("printing for debugging"+1);
 
 
 

@@ -89,7 +89,7 @@ public class Grid_view extends Activity {
                 // passing array index
                 i.putExtra("id", urlArrayList.get(position));
                 i.putExtra("position",position+"");
-                i.putExtra("path",email+"/"+imageArrayList.get(position));
+                i.putExtra("path",imageArrayList.get(position));
                 Grid_view.this.startActivityForResult(i,1);
             }
         });
@@ -111,7 +111,7 @@ public class Grid_view extends Activity {
                 desertRef.delete();
                 imageArrayList.remove(image);
                 urlArrayList.remove(image);
-                System.out.println("image name which is deleted is --->"+image);
+              //  System.out.println("image name which is deleted is --->"+image);
                 getFromFirebase();
             }
 
