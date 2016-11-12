@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="grid.MainActivity1" >
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.13">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text=" Front "
+                android:layout_column="5"
+                android:id="@+id/btnCamera"
+
+                android:layout_marginLeft="5dp"
+
+                android:layout_marginTop="5dp" />
+
+            <Button
+
+                android:text="Image"
+                android:id="@+id/btnCapture"
+                android:layout_column="5"
+                android:layout_marginTop="5dp" />
+
+            <Button
+                android:text="video"
+                android:id="@+id/btnVideo"
+                android:layout_column="5"
+
+
+
+
+                android:layout_marginTop="5dp" />
+
+            <Button
+                android:text="View"
+                android:layout_column="5"
+                android:id="@+id/btnView"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

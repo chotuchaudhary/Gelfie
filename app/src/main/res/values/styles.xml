@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme">
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+
+    </style>
+
+</resources>
