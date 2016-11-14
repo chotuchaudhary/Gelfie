@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.chotu.gelfie.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -51,16 +52,18 @@ public class Grid_view extends Activity {
         db.addValueEventListener(new com.google.firebase.database.ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot){
-
+                boolean flag=true;
                 for(DataSnapshot dsp:dataSnapshot.getChildren())
                 {
+                    flag=false;
                     urlArrayList.add(dsp.getValue(String.class));
                     imageArrayList.add(dsp.getKey());
 
                 }
 
 
-              callAdapter();
+
+              callAdapter(flag);
 
             }
 
@@ -72,8 +75,10 @@ public class Grid_view extends Activity {
 
     }
 
-    public void callAdapter()
+    public void callAdapter(boolean flag)
     {
+        if(flag)
+            Toast.makeText(this,"no image found !",Toast.LENGTH_LONG).show();
         GridView gridView = (GridView)findViewById(R.id.gridview);
         gridView.setAdapter(new MyAdapter(this,imageArrayList,urlArrayList));
         // Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fly_in_from_center);
@@ -89,7 +94,7 @@ public class Grid_view extends Activity {
                 // passing array index
                 i.putExtra("id", urlArrayList.get(position));
                 i.putExtra("position",position+"");
-                i.putExtra("path",imageArrayList.get(position));
+                i.putExtra("path",email+"/"+imageArrayList.get(position));
                 Grid_view.this.startActivityForResult(i,1);
             }
         });
